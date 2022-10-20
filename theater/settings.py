@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "crispy_forms",
     "movies",
     "shared",
+    "users",
 ]
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
@@ -115,6 +116,7 @@ TIME_ZONE = "UTC"
 USE_I18N = True
 
 USE_TZ = True
+LOGIN_URL = "signup/"
 
 
 # Static files (CSS, JavaScript, Images)

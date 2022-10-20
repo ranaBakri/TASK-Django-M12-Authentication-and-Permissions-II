@@ -16,11 +16,12 @@
       body {
         height: 100%;
       }
-    </style>
+      </style>
   </head>
   <body class="d-flex flex-column min-vh-100">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="{% url 'home' %}">CodedDB</a>
+      <button><a href ="{% url 'home' %}">Go back</a></button>
       <button
         class="navbar-toggler"
         type="button"
@@ -39,14 +40,31 @@
             <a class="nav-link" href="{% url 'home' %}">
               Home <span class="sr-only">(current)</span>
             </a>
+            <a class="nav-link" href="{% url 'regester' %}">
+              regester <span class="sr-only">(current)</span>
+              {% if request.user.is_authanticated%}
+            <li class="nav-item ">
+              <a class="nav-link" href="{% url 'signout' %}">signout</a>
+            </li>    
+            {% else %}
+            <a class="nav-link" href="{% url 'signin' %}">signin</a>
+            <a class="nav-link" href="{% url 'signout' %}">signout</a>
+            {% endif %}
+            </a>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" href="{% url 'movie-list' %}">Movies</a>
           </li>
         </ul>
       </div>
     </nav>
-
+    <li class="nav-item ">
+      <a class="nav-link" href="{% url 'regester' %}">regester</a>
+    </li>    
+    -item ">
+    </li>
+    
     <main class="bg-light h-100">
       <article class="container">
         <h1>Welcome to our awesome movie database!</h1>
